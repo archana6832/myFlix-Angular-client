@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <img src="">
+    <mat-list-item routerLinkActive="active current">
+        <a matLine routerLink="movies" (click)="goToMoviesPage()" style="margin-right: 15px; text-decoration: none;">
+            MOVIES
+        </a>
+    </mat-list-item>
+    <mat-list-item routerLinkActive="active current">
+        <a matLine routerLink="profile" (click)="goToProfilePage()" style="margin-right: 15px; text-decoration: none;">
+            PROFILE
+        </a>
+    </mat-list-item>
+    <mat-list-item routerLinkActive="active current">
+        <a matLine routerLink="logout" (click)="logout()" style="text-decoration: none;">
+            LOGOUT
+        </a>
+    </mat-list-item>
+
+</mat-toolbar>

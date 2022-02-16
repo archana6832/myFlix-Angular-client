@@ -1,0 +1,25 @@
+mat-card {
+    flex: auto;
+    margin: 7px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    width: 250px;
+  }
+  
+  mat-card-header {
+    max-height: 60px;
+  }
+  
+  mat-card-title {
+    font-family: 'Acme', sans-serif;
+    color: steelblue
+  }
+ 
+  
+  @media screen and (max-width: 840px) {
+    mat-card {
+        max-width: 350px;
+    }
+  
+   
+  }
