@@ -11,6 +11,11 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class NavbarComponent implements OnInit {
 
+  /**
+  * All constructor items are documented as properties
+  * @ignore
+ */
+
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,

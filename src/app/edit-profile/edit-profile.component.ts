@@ -1,3 +1,9 @@
+/** 
+ * The EditProfileComponent is used to render a mat dialog containing a form where the
+ * user can edit their profile details. 
+ * @module EditProfileComponent
+ */
+
 import { Component, OnInit, Input } from '@angular/core';
 
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -13,7 +19,12 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 
 export class EditProfileComponent implements OnInit {
+
   user: any = localStorage.getItem('user');
+
+  /** 
+   * userData values are populated by form inputs in the editprofile template
+   */
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -27,6 +38,13 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+     * Invokes the editUser method on the fetchApiData service, with the profileData from the form,
+     * in order to update the user's details. A successful update closes the form and navigates the user
+     * to the movies view. A popup is displayed confirming update success. If unsuccessful, a popup message
+     * asks the user to check the form fields and try again.
+     */
+
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((res) => {
       this.dialogRef.close();
@@ -37,7 +55,7 @@ export class EditProfileComponent implements OnInit {
         duration: 3000
       });
     }, (res) => {
-      this.snackBar.open(res, 'OK', {
+      this.snackBar.open('Try again', 'OK', {
         duration: 3000
       });
     })
